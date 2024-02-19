@@ -49,16 +49,6 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 const inputClassName =
   "w-full rounded border border-gray-500 px-2 py-1 text-lg";
 
-// export default function PostSlug() {
-//   const { html, post } = useLoaderData<typeof loader>();
-//   return (
-//     <main className="mx-auto max-w-4xl">
-//       <h1 className="my-6 border-b-2 text-center text-3xl">{post.title}</h1>
-//       <div dangerouslySetInnerHTML={{ __html: html }} />
-//     </main>
-//   );
-// }
-
 export default function NewPost() {
   const errors = useActionData<typeof action>();
   const { post } = useLoaderData<typeof loader>();
