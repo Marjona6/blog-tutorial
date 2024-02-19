@@ -1,5 +1,5 @@
 import { json } from "@remix-run/node";
-import { Link, Outlet, useLoaderData } from "@remix-run/react";
+import { Link, Outlet, useLoaderData, useLocation } from "@remix-run/react";
 
 import { getPosts } from "~/models/post.server";
 
@@ -9,6 +9,7 @@ export const loader = async () => {
 
 export default function PostAdmin() {
   const { posts } = useLoaderData<typeof loader>();
+  const { pathname } = useLocation();
   return (
     <div className="mx-auto max-w-4xl">
       <h1 className="my-6 mb-2 border-b-2 text-center text-3xl">Blog Admin</h1>
@@ -35,7 +36,7 @@ export default function PostAdmin() {
           </ul>
         </nav>
         <main className="col-span-4 md:col-span-3">
-          <Outlet />
+          <Outlet key={pathname} />
         </main>
       </div>
     </div>
