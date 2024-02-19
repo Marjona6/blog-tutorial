@@ -22,6 +22,16 @@ export default function PostAdmin() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link to="/posts" className="text-blue-600 underline">
+                Posts Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/" className="text-blue-600 underline">
+                Home
+              </Link>
+            </li>
           </ul>
         </nav>
         <main className="col-span-4 md:col-span-3">
